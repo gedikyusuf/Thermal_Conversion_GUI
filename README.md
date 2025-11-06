@@ -7,10 +7,10 @@ This repository contains the Thermal Conversion GUI, a tool developed for conver
 
 ## Citation
 
-If you use this tool in your research, please cite:
+If you use this software, please cite:
 
-> Yusuf Gedik & Orkan Özcan (2025). **Thermal Conversion GUI**. Zenodo.  
-> [https://doi.org/10.5281/zenodo.17075877](https://doi.org/10.5281/zenodo.17075877)
+Gedik, Y., & Ozcan, O. (2025). Thermal Conversion GUI (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.17075877
+
 
 
 1-Before running the code, please download and set up the required programs as follows:
