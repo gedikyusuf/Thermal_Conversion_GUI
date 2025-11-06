@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Workflow Automation for UAV Thermal Image Conversion and Geospatial Modeling"
+version: "0.1.0"
+doi: 10.5281/zenodo.17075877
+date-released: 2025-09-08
+authors:
+  - family-names: Gedik
+    given-names: Yusuf
+    orcid: "https://orcid.org/0009-0004-8998-3978"
+    affiliation: "Eurasia Institute of Earth Sciences, Istanbul Technical University"
+  - family-names: Ozcan
+    given-names: Orkan
+    orcid: "https://orcid.org/0000-0002-7485-6157"
+    affiliation: "Eurasia Institute of Earth Sciences, Istanbul Technical University"
+repository-code: "https://github.com/gedikyusuf/Thermal_Conversion_GUI"
+license: "MIT"
+keywords:
+  - thermal imaging
+  - UAV
+  - geospatial analysis
+  - image processing
+  - automation
