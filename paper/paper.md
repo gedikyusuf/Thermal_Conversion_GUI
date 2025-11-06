@@ -51,11 +51,3 @@ The authors gratefully acknowledge the Earth3Bee Lab – 3D Earth Modeling Labor
 (No external funding to declare.)
 
 # References
-McCafferty, D.J., Koprowski, R., Herborn, K., Tattersall, G.J., Jerem, P., Nord, A., 2021. Editorial: Advances in thermal imaging. Journal of Thermal Biology, 102, 103109. https://doi.org/10.1016/j.jtherbio.2021.103109. Available at: https://www.sciencedirect.com/science/article/pii/S0306456521002771.
-Harvey, P., 2025. ExifTool version 12.80. Retrieved August 2025, from https://exiftool.org.
-Glenn J. Tattersall. 2019. ThermImageJ: Thermal Image Functions and Macros for ImageJ. https://doi.org/10.5281/zenodo.2652896.
-DJI Thermal SDK Documentation. DJI Technology Co., Ltd., 2023. Retrieved from https://www.dji.com/global/downloads/softwares/dji-thermal-sdk.
-Schneider, C. A., Rasband, W. S., & Eliceiri, K. W., 2012. NIH Image to ImageJ: 25 years of image analysis. Nature Methods, 9, 671–675. https://doi.org/10.1038/nmeth.2089.
-Özcan, O., Ozcan, O., & Erten, E., 2023. Integration of InSAR with UAV-based infrared thermography for bridge monitoring. In AGU Fall Meeting 2023 (NH32B-04), San Francisco, CA. American Geophysical Union.
-N. Kara, H. A. Şişman, O. Özcan, O. Özcan and E. Erten, "InSAR Coupled with UAV-Based Infrared Thermography in the Context of Bridge Monitoring," IGARSS 2023 - 2023 IEEE International Geoscience and Remote Sensing Symposium, Pasadena, CA, USA, 2023, pp. 5758-5761, https://doi.org/10.1109/IGARSS52108.2023.10282331.
-Karakaş, M., Yıldırım, C., Ozcan, O., Akay, S. S., Gedik, Y. & Baka, Ç. M., 2025. High-resolution thermal imaging of the surface rupture of the February 6 2023, Kahramanmaraş earthquake (Mw 7.8), Türkiye. In EGU General Assembly 2025 (EGU25-11894). Copernicus Meetings. https://doi.org/10.5194/egusphere-egu25-11894.
