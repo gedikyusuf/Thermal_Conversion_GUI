@@ -11,7 +11,9 @@ If you use this software, please cite:
 
 Gedik, Y., & Ozcan, O. (2025). Thermal Conversion GUI (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.17075877
 
-
+## Source Code
+The executable (`tc.exe`) was compiled from the Python script located in `source_code/thermal_conversion_gui.py`.  
+This script contains the full GUI workflow logic and can be reviewed directly. 
 
 1-Before running the code, please download and set up the required programs as follows:
 
