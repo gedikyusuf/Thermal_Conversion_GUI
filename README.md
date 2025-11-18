@@ -1,9 +1,12 @@
-# Thermal Conversion GUI
+# Thermal Conversion GUI (modular)
 Radiometric JPEG to TIFF conversion process
+This folder contains the modular source code for the Thermal Conversion GUI packed in the repository.
+It includes a GUI and a CLI for batch conversion of DJI R-JPEG thermal images to georeferenced TIFFs.
 
 [![10.5281/zenodo.17075877](https://zenodo.org/badge/DOI/10.5281/zenodo.17075877.svg)](https://doi.org/10.5281/zenodo.17075877)
 
-This repository contains the Thermal Conversion GUI, a tool developed for converting and processing thermal images captured by DJI devices.  
+## Quick start (GUI)
+1. Install Python 3.9+ and dependencies:
 
 ## Citation
 
