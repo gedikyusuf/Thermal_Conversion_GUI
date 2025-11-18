@@ -31,15 +31,23 @@ def test_path_initialization_success(mocker, config_instance): # <-- mocker ekle
 def test_missing_dependency_raises_error(mocker, config_instance):
     """Tests if validate_paths raises MissingDependencyError when a file is missing."""
     
-    # Mocker: os.path.isdir'i taklit et (True)
+    # 1. os.path.isdir'i taklit et (True)
     mocker.patch('os.path.isdir', return_value=True) 
     
-    # Mocker: os.path.exists'i taklit et (İlk 1 True, sonraki 3 False olacak)
-    mocker.patch('os.path.exists', side_effect=[True, False, True, True]) 
+    # 2. os.path.exists'i taklit et:
+    # Toplam 10 kontrol simüle ediliyor. 
+    # İlk True: DJI IRP var. 
+    # İkinci False: ImageJ EXE yok (Hata burada fırlatılacak).
+    # Geri kalanlar yedek True'lardır (StopIteration'ı önlemek için).
+    mocker.patch('os.path.exists', side_effect=[
+        True,      # DJI IRP (Var)
+        False,     # ImageJ EXE (Yok - Hata fırlatılmalı)
+        True, True, True, True, True, True, True, True  # Yeterli yedek True'lar
+    ]) 
     
     config_instance.initialize_paths(MOCK_ROOT)
 
     with pytest.raises(MissingDependencyError) as excinfo:
-        config_instance.validate_paths()
+        config_instance.validate_paths() # Hata burada fırlatılacak
         
     assert 'ImageJ EXE' in str(excinfo.value)
