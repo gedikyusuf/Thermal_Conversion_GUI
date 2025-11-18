@@ -41,10 +41,9 @@ def test_missing_dependency_raises_error(mocker, config_instance):
     """Tests if validate_paths raises MissingDependencyError when a file is missing."""
     config_instance.initialize_paths(MOCK_ROOT)
     
-    # os.path.exists'i taklit etme: İlk sefer True, sonra False döndürerek bir dosyanın eksik olduğunu simüle et
     mocker.patch('os.path.exists', side_effect=[True, False, True, True]) 
     
     with pytest.raises(MissingDependencyError) as excinfo:
         config_instance.validate_paths()
         
-    assert 'ImageJ EXE' in str(excinfo.value) # İkinci kontrol edilen dosya
+    assert 'ImageJ EXE' in str(excinfo.value)
