@@ -1,4 +1,3 @@
-PyQt5>=5.15.7
-numpy>=1.23.0
-pillow>=10.0.0
-psutil>=5.9.0
+PyQt5>=5.15
+pytest
+pytest-mock
