@@ -3,24 +3,25 @@ import pytest
 import sys
 from PyQt5.QtWidgets import QApplication
 
-# Gerekirse QApplication fixture'ı kalmalı (önceki adımda eklemiştik)
+# 1. PyQt5 Sanal Ortamı (Katman 1 çözümü)
 @pytest.fixture(scope="session", autouse=True)
 def qapp():
+    # ... (QApplication başlatma mantığı) ...
     app = QApplication.instance()
     if app is None:
         app = QApplication(sys.argv)
     return app
 
-# GLOBAL MOCKING FIXTURE'I: Tüm testler için geçerli olacak
+# 2. Windows Komutlarını ve Dosya Yollarını Taklit Etme (Katman 2 & 3 çözümü)
 @pytest.fixture(autouse=True)
-def mock_path_dependencies(mocker):
-    """
-    os.path.isdir ve os.path.exists'i tüm test oturumu boyunca taklit eder. 
-    Bu, StopIteration hatalarını önler.
-    """
-    # os.path.isdir: Her zaman True döndür (MOCK_ROOT'un var olduğunu varsayıyoruz)
-    mocker.patch('os.path.isdir', return_value=True)
+def mock_path_and_subprocess(mocker):
+    """Tüm subprocess çağrılarını ve os.path kontrolünü taklit eder."""
+    
+    # Katman 3 Çözümü: Subprocess çağrılarını her zaman başarılı olarak taklit et
+    # Bu, testlerin Windows komutlarını çalıştırmasını engeller.
+    mocker.patch('subprocess.run', return_value=mocker.Mock(returncode=0))
+    mocker.patch('subprocess.Popen', return_value=mocker.Mock())
 
-    # os.path.exists: Sadece 'validate_paths' testi için özel olarak tanımlanacak. 
-    # Diğer tüm durumlarda (Pytest'in dahili çağrıları dahil) True dönsün.
-    mocker.patch('os.path.exists', return_value=True)
+    # Katman 2 Çözümü: os.path.isdir'i taklit et (klasör var kabul et)
+    # Bu, initialize_paths metodunuzdaki hatayı çözer.
+    mocker.patch('os.path.isdir', return_value=True)
