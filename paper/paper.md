@@ -21,7 +21,7 @@ Several tools exist for thermal extraction workflows, including ImageJ-based mac
 
 The software presented here provides a single-step, unified GUI and CLI-based workflow that converts UAV R-JPEG files into radiometrically calibrated and GIS-ready TIFF rasters. The automated conversion process greatly reduces manual effort and processing time, which are common challenges in large-scale or time-sensitive projects. Furthermore, the robust, modular Python package architecture ensures high code quality, automated testing, and operational efficiency for research involving high-throughput thermal remote sensing.
 
-# Statement of need
+# Statement of Need
 Thermal imagery workflows in scientific and engineering applications often involve fragmented pipelines, requiring users to manually coordinate radiometric metadata extraction, image conversion, and GIS integration using multiple independent tools [@schneider2012]. In traditional methods, thousands of R-JPEG files are usually converted manually, causing significant time loss and workload. This process depends heavily on the user and is prone to inconsistencies.
 This software addresses this gap by integrating essential, industry-standard tools:
 R-JPEG decoding (DJI Thermal SDK compliant)
@@ -30,7 +30,7 @@ Metadata preservation and GIS-compatible georeferencing (via ExifTool)
 into a single executable interface. The tool has already been successfully applied in UAV-based structural monitoring workflows [@ozcan2023; @kara2023] and post-earthquake mapping studies [@karakas2025], demonstrating its substantial utility in civil engineering and geoscience applications. This automated data conversion workflow facilitates accurate, repeatable, and spatially detailed thermal analyses, strengthening data-driven decision-making in multidisciplinary research contexts.
 
 
-# Key features
+# Key Features
 The core functionality of the ThermalConverter is delivered through a robust Python package architecture that emphasizes modularity and user accessibility:
 Unified Pipeline Orchestration: The tool acts as a single-step pipeline orchestrator, managing the sequential execution of external tools necessary for R-JPEG processing. This approach minimizes user intervention compared to traditional fragmented workflows, which drastically improves data consistency.
 Dual Execution Interface: For maximum utility, the software provides a dual execution interface. It offers a GUI-based execution for researchers who require an intuitive, non-coding environment, and a dedicated Command-Line Interface (CLI) for server-side batch processing and integration into larger scripted workflows.
