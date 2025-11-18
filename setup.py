@@ -1,7 +1,5 @@
 # setup.py
 import setuptools
-# thermal_converter/__init__.py dosyasında versiyon bilgisi olduğundan, 
-# buraya dinamik olarak çekmek için küçük bir hile yapıyoruz.
 def get_version():
     with open('thermal_converter/__init__.py') as f:
         for line in f:
