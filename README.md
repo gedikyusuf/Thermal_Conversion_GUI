@@ -1,56 +1,113 @@
-# Thermal Conversion GUI (modular)
-Radiometric JPEG to TIFF conversion process
-This folder contains the modular source code for the Thermal Conversion GUI packed in the repository.
-It includes a GUI and a CLI for batch conversion of DJI R-JPEG thermal images to georeferenced TIFFs.
+Thermal Conversion GUI (Modular Version)
 
-[![10.5281/zenodo.17075877](https://zenodo.org/badge/DOI/10.5281/zenodo.17075877.svg)](https://doi.org/10.5281/zenodo.17075877)
+A graphical and command-line tool for converting DJI radiometric R-JPEG thermal images into georeferenced TIFF products using ImageJ, DJI Thermal SDK, and ExifTool.
 
-## Quick start (GUI)
-1. Install Python 3.9+ and dependencies:
+This repository includes:
 
-## Citation
+A modular Python source code package (source_code/)
+
+A GUI application for step-by-step thermal conversion
+
+A CLI interface for batch processing
+
+A pre-compiled Windows executable (tc.exe)
+
+🚀 Quick Start (GUI)
+1. Install Python and dependencies
+pip install PyQt5
+
+
+(Optional, if you add requirements.txt)
+
+pip install -r requirements.txt
+
+2. Install required external tools
+
+These tools must be present in the project root folder or added to your system PATH:
+
+✓ ImageJ
+
+Download and extract to:
+ImageJ/ImageJ.exe
+https://wsr.imagej.net/distros/win/ij154-win-java8.zip
+
+✓ DJI Thermal SDK
+
+Extract to:
+DJI_Thermal_SDK/
+https://terra-1-g.djicdn.com/.../dji_thermal_sdk_v1.7_20241205.zip
+
+✓ ExifTool
+
+Extract to root and rename executable as:
+exiftool.exe
+https://exiftool.org/
+
+🖥️ How to Use (GUI Workflow)
+
+Launch ImageJ.exe once so that the environment initializes.
+
+Start the program:
+
+Either double-click tc.exe, or
+
+Run the Python GUI from source:
+
+python source_code/thermal_conversion_gui.py
+
+
+Step 1: Select the folder containing R-JPEG thermal images → click Set Env Vars and Continue.
+
+Step 2: Click Generate RAW Files (DJI SDK processing).
+
+Step 3: Click Convert JPG to TIFF (ImageJ processing).
+
+Step 4: Click Complete the Process.
+
+Output will be saved in the Converted/ folder.
+Each image will generate:
+
+*.tiff → final converted image
+
+*_original.tiff → optional intermediate file (can be deleted)
+
+🧪 Command-Line Interface (CLI)
+
+The modular Python version includes a CLI script:
+
+python -m source_code.cli --input INPUT_FOLDER --output OUTPUT_FOLDER
+
+
+(If you want, you can later expand this section.)
+
+📂 Source Code Layout
+source_code/
+│── gui/                    # GUI components
+│── processing/             # RAW creation + TIFF conversion modules
+│── utils/                  # helpers for paths, logging, environment checks
+│── cli.py                  # batch-processing interface
+│── thermal_conversion_gui.py  # launches GUI
+
+
+The executable tc.exe is compiled from this Python code.
+
+📜 Citation
 
 If you use this software, please cite:
 
-Gedik, Y., & Ozcan, O. (2025). Thermal Conversion GUI (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.17075877
+Gedik, Y., & Ozcan, O. (2025). Thermal Conversion GUI (v1.0.0). Zenodo.
+https://doi.org/10.5281/zenodo.17075877
 
-## Source Code
-The executable (`tc.exe`) was compiled from the Python script located in `source_code/thermal_conversion_gui.py`.  
-This script contains the full GUI workflow logic and can be reviewed directly. 
+🙏 Acknowledgements
 
-1-Before running the code, please download and set up the required programs as follows:
+ThermImageJ – Glenn J. Tattersall (2019).
+https://doi.org/10.5281/zenodo.2652896
 
-  ImageJ: Download from https://wsr.imagej.net/distros/win/ij154-win-java8.zip and extract under the selected root folder as ImageJ/ImageJ.exe.
+ImageJ – Public Domain License
+https://imagej.net
 
-  DJI Thermal SDK: Download from https://terra-1-g.djicdn.com/2640963bcd8e45c0a4f0cb9829739d6b/TSDK/v1.7(12.0-WA345T)/dji_thermal_sdk_v1.7_20241205.zip and extract under the selected root folder as DJI_Thermal_SDK/.
+ExifTool – Artistic License
+https://exiftool.org
 
-  ExifTool: Download from https://sourceforge.net/projects/exiftool/files/exiftool-13.34_64.zip/download, extract under the selected root folder, and rename exiftool(-k).exe to exiftool.exe.
-
-  After completing these steps, launch ImageJ.exe and then run the program by double-clicking TC.exe.
-
-2-In the window that opens, go to Step 1: click the "Select Thermal Images Folder" button and choose the folder containing your thermal images. Then, click the "Set Env Vars and Continue" button.
-
-3-In the automatically opened Step 2 tab, click the "Generate RAW Files" button. A command-line window will appear, and the program will start generating .RAW files for your images. Please wait until this process is completed.
-
-4-After that, in the automatically opened Step 3 tab, click the "Convert Files from JPG to TIFF" button.
-
-5-In the automatically opened Step 4 tab, click the "Complete the Process" button to start the final processing step. The processing time depends on the number and size of your images (e.g., converting 100 thermal images typically takes about 5 minutes. In the Converted folder, two files will be created for each image: a .tiff file and a .tiff original file. You may safely delete the .tiff original files).
-
-
-## Acknowledgements
-
-This project uses the following external tools and libraries:
-
-- **ThermImageJ** – Glenn J. Tattersall (2019).  
-  *Thermal Image Functions and Macros for ImageJ.*  
-  [https://doi.org/10.5281/zenodo.2652896](https://doi.org/10.5281/zenodo.2652896)
-
-- **ImageJ** – [https://imagej.net/](https://imagej.net/)  
-  Developed by the NIH. Distributed under [Public Domain license](https://imagej.net/ij/docs/intro/license.html).
-
-- **ExifTool** – [https://exiftool.org/](https://exiftool.org/)  
-  Developed by Phil Harvey. Distributed under [Artistic License](https://dev.perl.org/licenses/artistic.html).
-
-- **DJI Thermal SDK** – [DJI Official SDK Download](https://terra-1-g.djicdn.com/2640963bcd8e45c0a4f0cb9829739d6b/TSDK/v1.7(12.0-WA345T)/dji_thermal_sdk_v1.7_20241205.zip)  
-  Developed by DJI. Distributed under their SDK License Agreement.
-
+DJI Thermal SDK – SDK License Agreement
+DJI official distribution
