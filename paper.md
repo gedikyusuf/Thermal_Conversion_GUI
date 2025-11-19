@@ -15,7 +15,7 @@ repository: "https://github.com/gedikyusuf/Thermal_Conversion_GUI"
 ---
 
 # Summary
-Thermal imaging has become increasingly important in structural health monitoring, geosciences, and ecological observations, particularly with the growing accessibility of UAV-based remote sensing platforms [@mccafferty2021]. Most commercial UAV thermal cameras record data in Radiometric JPEG (R-JPEG) format, embedding raw temperature values in metadata rather than storing them in a geospatially compatible raster format that can be directly processed by GIS software.
+Thermal imaging has become increasingly important in structural health monitoring, geosciences, and ecological observations, particularly with the growing accessibility of UAV-based remote sensing platforms [@mccafferty2021]. This convergence of technology and application is critical for Earth Sciences, where high-resolution spatial data is essential for assessing surface processes, infrastructure stability, and environmental change. Most commercial UAV thermal cameras record data in Radiometric JPEG (R-JPEG) format, embedding raw temperature values in metadata rather than storing them in a geospatially compatible raster format that can be directly processed by GIS software.
 
 Several tools exist for thermal extraction workflows, including ImageJ-based macros [@tattersall2019] and radiometric metadata decoders such as ExifTool [@harvey2025]. However, these solutions typically require scripting experience, manual orchestration across multiple software steps, or command-line data handling, which significantly increases the risk of user error and slows down large-scale processing.
 
