@@ -10,7 +10,7 @@ authors:
 affiliations:
   - name: Eurasia Institute of Earth Sciences, Istanbul Technical University, Istanbul, Türkiye
     index: 1
-date: 2025-09-08
+date: 2025-11-18
 repository: "https://github.com/gedikyusuf/Thermal_Conversion_GUI"
 ---
 
@@ -46,6 +46,6 @@ Raster Conversion: Uses ImageJ in headless mode, executing a custom macro to con
 Georeferencing: Uses ExifTool to copy embedded EXIF and GPS metadata from the original R-JPEG files to the newly generated TIFF rasters.
 User Interaction: The user interface (managed by gui.py) is structured into four sequential steps, guiding the user through the conversion pipeline. The CLI component uses argparse to replicate this entire sequential workflow without any GUI dependency, making it suitable for high-throughput computing environments.
 # Acknowledgements
-The authors gratefully acknowledge the Earth3Bee Lab – 3D Earth Modeling Laboratory for providing access to facilities and resources that supported the image processing tasks. We also acknowledge the open-source community behind ImageJ, ExifTool, and the PyQt5 framework that underpin this application. This work was supported by research grant from the Scientific and Technological Research Council of Türkiye
+The authors gratefully acknowledge the Earth3Bee Lab – 3D Earth Modeling Laboratory for providing access to facilities and resources that supported the image processing tasks. We also acknowledge the open-source community behind ImageJ, ExifTool, and the PyQt5 framework that underpin this application. This work was supported by research grant from the Scientific and Technological Research Council of Türkiye.
 
 # References
